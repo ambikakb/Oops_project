@@ -7,7 +7,7 @@ class Nykaa:
     def __init__(self):
         self.d = webdriver.Edge()
         self.d.maximize_window()
-        self.d.implicitly_wait(5)
+        self.d.implicitly_wait(30)
         self.d.get("https://www.nykaa.com/")
 
     def login(self):
@@ -17,7 +17,11 @@ class Nykaa:
         self.d.find_element(By.XPATH, "//*[@type='submit']").click()
         self.d.find_element(By.NAME, "password").send_keys("Demo@#123")
         self.d.find_element(By.XPATH, "//button[@class='button big fill full small-button-seperator ']").click()
+        expect = 'Ambika'
+        element = self.d.find_element(By.XPATH, "//span[contains(@class,'css-17ukzrr euw1lbv4')]")
 
+    def addingbag(self):
+        return 0
 
 class Addbag(Nykaa):
     def addingbag(self):
